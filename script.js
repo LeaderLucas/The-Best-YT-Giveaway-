@@ -48,6 +48,8 @@ let password =
 document.getElementById("password")
 .value.trim();
 
+
+// EMPTY CHECK
 if(!name || !mobile || !server || !password){
 
 alert("Fill all fields ❌");
@@ -55,21 +57,20 @@ return;
 
 }
 
+
+// GET USERS
 let users =
-JSON.parse(localStorage.getItem("users")) || [];
+JSON.parse(
+localStorage.getItem("users")
+) || [];
+
 
 // FIND USER
+let existingUser = users.find(
 
-let existingUser =
-users.find(
 x =>
 
-(
-x.mobile === mobile ||
-
-x.name.toLowerCase() === name.toLowerCase()
-
-)
+x.mobile === mobile
 
 &&
 
@@ -77,78 +78,32 @@ x.password === password
 
 );
 
-// OLD LOGIN
 
+// OLD USER LOGIN
 if(existingUser){
 
 currentUser = existingUser;
 
-// FIX OLD USERS
-
-if(currentUser.sno === undefined){
-
-currentUser.sno =
-users.indexOf(existingUser) + 1;
-
-}
-
-if(currentUser.balance === undefined){
-
-currentUser.balance = 0;
-
-}
-
-if(currentUser.earning === undefined){
-
-currentUser.earning = 0;
-
-}
-
-if(currentUser.withdrawn === undefined){
-
-currentUser.withdrawn = 0;
-
-}
-
-if(currentUser.verified === undefined){
-
-currentUser.verified = false;
-
-}
-
-if(currentUser.lastVideo === undefined){
-
-currentUser.lastVideo = "";
-
-}
-
-if(currentUser.videoPending === undefined){
-
-currentUser.videoPending = false;
-
-}
-
-if(currentUser.lastWithdrawAmount === undefined){
-
-currentUser.lastWithdrawAmount = 0;
-
-}
-
 }else{
 
-// NEW USER
+// NEW USER CREATE
 
 currentUser = {
 
 sno: users.length + 1,
 
 name: name,
+
 mobile: mobile,
+
 server: server,
+
 password: password,
 
 balance: 0,
+
 earning: 0,
+
 withdrawn: 0,
 
 verified: false,
@@ -161,26 +116,32 @@ lastWithdrawAmount: 0
 
 };
 
+
+// SAVE NEW USER
 users.push(currentUser);
 
 localStorage.setItem(
+
 "users",
+
 JSON.stringify(users)
+
 );
 
 }
 
-// SAVE LOGIN
 
+// SAVE CURRENT USER
 localStorage.setItem(
+
 "currentUser",
+
 JSON.stringify(currentUser)
+
 );
 
-saveUser();
 
 // LOGIN WEBHOOK
-
 fetch(loginWebhook,{
 
 method:"POST",
@@ -211,10 +172,15 @@ currentUser.mobile
 
 });
 
+
+// SAVE USER
+saveUser();
+
+
+// OPEN PROFILE
 showProfile();
 
 }
-
 // SHOW PROFILE
 
 function showProfile(){
