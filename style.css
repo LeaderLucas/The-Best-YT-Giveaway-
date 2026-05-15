@@ -1,0 +1,159 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#050505;
+color:white;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.main-container{
+width:100%;
+max-width:420px;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:25px;
+box-shadow:
+0 0 15px #00ffff55,
+0 0 25px #ff00ff33;
+border:1px solid #222;
+animation:fade 0.4s ease;
+}
+
+.hidden{
+display:none;
+}
+
+.title{
+text-align:center;
+margin-bottom:20px;
+font-size:28px;
+color:#00ffff;
+text-shadow:
+0 0 10px cyan,
+0 0 20px cyan;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+outline:none;
+border-radius:14px;
+background:#1b1b1b;
+color:white;
+font-size:15px;
+border:1px solid #333;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+button,
+.video-btn{
+width:100%;
+padding:14px;
+margin-top:15px;
+border:none;
+border-radius:14px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+background:linear-gradient(
+45deg,
+#ff00ff,
+#00ffff
+);
+color:white;
+box-shadow:
+0 0 10px #00ffff88,
+0 0 20px #ff00ff55;
+transition:0.3s;
+text-decoration:none;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+button:hover,
+.video-btn:hover{
+transform:scale(1.03);
+box-shadow:
+0 0 20px cyan,
+0 0 30px magenta;
+}
+
+.stats-box{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-bottom:20px;
+}
+
+.stat{
+background:#181818;
+padding:15px;
+border-radius:15px;
+border:1px solid #333;
+box-shadow:0 0 10px #00ffff22;
+}
+
+.stat h3{
+font-size:15px;
+margin-bottom:5px;
+color:#00ffff;
+}
+
+.stat p{
+font-size:20px;
+font-weight:bold;
+}
+
+.video-box{
+text-align:center;
+padding:20px;
+}
+
+.youtube-icon{
+font-size:70px;
+color:red;
+margin-bottom:15px;
+text-shadow:0 0 20px red;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:cyan;
+border-radius:10px;
+}
