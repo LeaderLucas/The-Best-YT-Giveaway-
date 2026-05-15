@@ -63,8 +63,18 @@ JSON.parse(localStorage.getItem("users")) || [];
 let existingUser =
 users.find(
 x =>
+
+(
 x.mobile === mobile ||
+
 x.name.toLowerCase() === name.toLowerCase()
+
+)
+
+&&
+
+x.password === password
+
 );
 
 // OLD LOGIN
