@@ -48,9 +48,9 @@ let password =
 document.getElementById("password")
 .value.trim();
 
-if(!name || !mobile || !password){
+if(!name || !mobile || !server || !password){
 
-alert("Fill all fields");
+alert("Fill all fields ❌");
 return;
 
 }
