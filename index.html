@@ -4,14 +4,19 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Neon Reward Website</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Neon Reward Website
+</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
@@ -19,142 +24,229 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="main-container">
 
-<!-- LOGIN -->
+<!-- LOGIN PAGE -->
 
-<div class="card" id="loginPage">
+<div class="card"
+id="loginPage">
 
-<h1 class="title">WELCOME</h1>
+<h1 class="title">
+WELCOME
+</h1>
 
-<input type="text"
+<input
+type="text"
 id="name"
 placeholder="Enter Username">
 
-<input type="text"
+<input
+type="number"
 id="mobile"
 placeholder="Enter Mobile Number">
 
 <select id="server">
 
-<option value="">Select Server</option>
+<option value="">
+Select Server
+</option>
 
-<option>Server 1</option>
-<option>Server 2</option>
-<option>Server 3</option>
-<option>Server 4</option>
+<option>
+Server 1
+</option>
+
+<option>
+Server 2
+</option>
+
+<option>
+Server 3
+</option>
+
+<option>
+Server 4
+</option>
 
 </select>
 
-<input type="password"
+<input
+type="password"
 id="password"
-placeholder="Enter Password">
+placeholder="Enter Password"
+autocomplete="off">
 
 <button onclick="loginUser()">
+
 <i class="fa-solid fa-right-to-bracket"></i>
+
 LOGIN
+
 </button>
 
 </div>
 
-<!-- PROFILE -->
 
-<div class="card hidden" id="profilePage">
 
-<h1 class="title">PROFILE</h1>
+<!-- PROFILE PAGE -->
+
+<div class="card hidden"
+id="profilePage">
+
+<h1 class="title">
+PROFILE
+</h1>
+
+
+<!-- STATS -->
 
 <div class="stats-box">
 
 <div class="stat">
-<h3>Total Earning</h3>
-<p id="earning">0</p>
+
+<h3>
+Total Earning
+</h3>
+
+<p id="earning">
+0
+</p>
+
 </div>
 
 <div class="stat">
-<h3>Withdraw Money</h3>
-<p id="withdrawn">0</p>
+
+<h3>
+Withdraw Money
+</h3>
+
+<p id="withdrawn">
+0
+</p>
+
 </div>
 
 <div class="stat">
-<h3>Current Balance</h3>
-<p id="balance">0</p>
+
+<h3>
+Current Balance
+</h3>
+
+<p id="balance">
+0
+</p>
+
 </div>
 
 </div>
+
+
+
+<!-- BUTTONS -->
 
 <button onclick="watchVideo()">
+
 <i class="fa-brands fa-youtube"></i>
+
 NEW VIDEO
+
 </button>
 
 <button onclick="showSection('subscribeSection')">
+
 <i class="fa-solid fa-circle-check"></i>
+
 SUBSCRIBE VERIFICATION
+
 </button>
 
 <button onclick="showSection('withdrawSection')">
+
 <i class="fa-solid fa-money-bill-wave"></i>
+
 WITHDRAW REQUEST
+
 </button>
 
 <button onclick="showSection('reviewSection')">
+
 <i class="fa-solid fa-star"></i>
+
 YOUR REVIEW
+
 </button>
 
 </div>
 
-<!-- SUBSCRIBE -->
+
+
+<!-- SUBSCRIBE SECTION -->
 
 <div class="card hidden section"
 id="subscribeSection">
 
 <h1 class="title">
+
 SUBSCRIBE VERIFICATION
+
 </h1>
 
-<input type="text"
+<input
+type="text"
 id="subName"
 readonly>
 
-<input type="text"
+<input
+type="text"
 id="subServer"
 readonly>
 
-<input type="text"
+<input
+type="text"
 id="gameNumber"
 placeholder="Enter 6 Digit Game Number">
 
-<input type="text"
+<input
+type="text"
 id="proofLink"
 placeholder="Paste Screenshot Link">
 
 <button onclick="submitSubscribe()">
+
 SUBMIT
+
 </button>
 
 <button onclick="backProfile()">
+
 BACK
+
 </button>
 
 </div>
 
-<!-- WITHDRAW -->
+
+
+<!-- WITHDRAW SECTION -->
 
 <div class="card hidden section"
 id="withdrawSection">
 
 <h1 class="title">
+
 WITHDRAW REQUEST
+
 </h1>
 
-<input type="text"
+<input
+type="text"
 id="withName"
 readonly>
 
-<input type="text"
+<input
+type="text"
 id="withServer"
 readonly>
 
-<input type="text"
+<input
+type="text"
 id="withdrawNumber"
 placeholder="Enter 6 Digit Game Number">
 
@@ -164,52 +256,79 @@ placeholder="Enter 6 Digit Game Number">
 Select Amount
 </option>
 
-<option value="5000">5000</option>
-<option value="10000">10000</option>
-<option value="30000">30000</option>
-<option value="50000">50000</option>
-<option value="100000">100000</option>
+<option value="5000">
+5000
+</option>
+
+<option value="10000">
+10000
+</option>
+
+<option value="30000">
+30000
+</option>
+
+<option value="50000">
+50000
+</option>
+
+<option value="100000">
+100000
+</option>
 
 </select>
 
 <button onclick="submitWithdraw()">
+
 SUBMIT
+
 </button>
 
 <button onclick="backProfile()">
+
 BACK
+
 </button>
 
 </div>
 
-<!-- REVIEW -->
+
+
+<!-- REVIEW SECTION -->
 
 <div class="card hidden section"
 id="reviewSection">
 
 <h1 class="title">
+
 YOUR REVIEW
+
 </h1>
 
-<input type="text"
+<input
+type="text"
 id="reviewName"
 readonly>
 
 <textarea
 id="reviewText"
-placeholder="Write Your Review">
-</textarea>
+placeholder="Write Your Review"></textarea>
 
-<input type="text"
+<input
+type="text"
 id="reviewImage"
 placeholder="Paste Screenshot Link">
 
 <button onclick="submitReview()">
+
 SUBMIT REVIEW
+
 </button>
 
 <button onclick="backProfile()">
+
 BACK
+
 </button>
 
 </div>
